@@ -2,63 +2,49 @@ task testCassandra(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.CassandraCategory'
     }
-    onlyIf {
-        "CASSANDRA".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /cassandra/
 }
 
 task testCosmosDb(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.CosmosDbCategory'
     }
-    onlyIf {
-        "COSMOSDB".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /cosmosdb/
 }
 
 task testCouchbase(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.CouchbaseCategory'
     }
-    onlyIf {
-        "COUCHBASE".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /couchbase/
 }
 
 task testCouchDb(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.CouchDbCategory'
     }
-    onlyIf {
-        "COUCHDB".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /couchdb/
 }
 
 task testMySQL(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.MySQLCategory'
     }
-    onlyIf {
-        "MYSQL".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /jpa/
 }
 
 task testPostgres(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.PostgresCategory'
     }
-    onlyIf {
-        "POSTGRES".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /jpa/
 }
 
 task testDynamoDb(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.DynamoDbCategory'
     }
-    onlyIf {
-        "DYNAMODB".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /dynamodb/
 }
 
 task testFileSystem(type: Test) {
@@ -74,18 +60,14 @@ task testIgnite(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.IgniteCategory'
     }
-    onlyIf {
-        "IGNITE".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /ignite/
 }
 
 task testInfluxDb(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.InfluxDbCategory'
     }
-    onlyIf {
-        "INFLUXDB".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /influxdb/
 }
 
 task testLdap(type: Test) {
@@ -110,36 +92,28 @@ task testMemcached(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.MemcachedCategory'
     }
-    onlyIf {
-        "MEMCACHED".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /(memcached|oauth)/
 }
 
 task testMsSqlServer(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.MsSqlServerCategory'
     }
-    onlyIf {
-        "MSSQLSERVER".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /jpa/
 }
 
 task testMongoDb(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.MongoDbCategory'
     }
-    onlyIf {
-        "MONGODB".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /mongo/
 }
 
 task testRedis(type: Test) {
     useJUnit {
         includeCategories 'org.apereo.cas.category.RedisCategory'
     }
-    onlyIf {
-        "REDIS".equalsIgnoreCase(rootProject.testCategoryType)
-    }
+    enabled = project.name =~ /redis/
 }
 
 test {
